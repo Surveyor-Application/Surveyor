@@ -36,4 +36,7 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public void updatePassword(Integer id, String name) { userRepository.updatePassword(id, name); }
+
 }

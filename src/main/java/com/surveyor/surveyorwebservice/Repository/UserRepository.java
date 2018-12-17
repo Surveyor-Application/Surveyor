@@ -2,6 +2,9 @@ package com.surveyor.surveyorwebservice.Repository;
 
 import com.surveyor.surveyorwebservice.DO.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -14,4 +17,8 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     User findByNameAndPassword(String name, String password);
+
+    @Query(value = "update user set name=?2 where id=?1", nativeQuery = true)
+    @Modifying
+    public void updatePassword(@Param(value="id") Integer id, @Param(value="name") String name);
 }
