@@ -18,6 +18,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     User findByNameAndPassword(String name, String password);
 
+    User findByName(String name);
+
     @Query(value = "update user set name=?2 where id=?1", nativeQuery = true)
     @Modifying
     public void updatePassword(@Param(value="id") Integer id, @Param(value="name") String name);

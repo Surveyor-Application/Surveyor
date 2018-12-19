@@ -422,4 +422,11 @@ font-size: 19px;
 }
 }
 
+/*-----------------------
+
+-----------------------*/
+#tbody-categoris tr td{
+    padding: auto;
+}
+
 

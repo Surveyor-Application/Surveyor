@@ -17,7 +17,7 @@ public class User {
 
     /* 用户ID */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
@@ -39,6 +39,8 @@ public class User {
 
     public User(){
     }
+
+
 
     public User(String name, String password){
         this.name = name;
