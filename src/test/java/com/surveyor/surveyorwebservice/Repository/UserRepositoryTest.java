@@ -1,6 +1,6 @@
 package com.surveyor.surveyorwebservice.Repository;
 
-import com.surveyor.surveyorwebservice.DO.User;
+import com.surveyor.surveyorwebservice.Bean.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

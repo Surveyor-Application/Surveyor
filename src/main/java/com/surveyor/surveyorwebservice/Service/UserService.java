@@ -1,6 +1,6 @@
 package com.surveyor.surveyorwebservice.Service;
 
-import com.surveyor.surveyorwebservice.DO.User;
+import com.surveyor.surveyorwebservice.Bean.User;
 
 import java.util.List;
 
@@ -11,6 +11,8 @@ public interface UserService {
     List<User> findAllUser();
 
     User findByName(String name);
+
+    List<User> findByOrderId(Integer oId);
 
     User findByNameAndPassword(String name, String password);
 

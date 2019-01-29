@@ -1,10 +1,8 @@
 package com.surveyor.surveyorwebservice.Controller;
 
-import com.surveyor.surveyorwebservice.DO.User;
+import com.surveyor.surveyorwebservice.Bean.User;
 import com.surveyor.surveyorwebservice.Service.UserService;
-import jdk.nashorn.internal.runtime.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.convert.ReadingConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +42,13 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/getInfo/{name}")
-    public User findUserByName(@PathVariable("name")String name) { return userService.findByName(name); }
+    public User findUserByName(@PathVariable("name")String name){return userService.findByName(name); }
+
+    @ResponseBody
+    @GetMapping("/orderList")
+    public List<User> findUserByOrderId(@RequestParam("oId")Integer oId){
+        return userService.findByOrderId(oId);
+    }
 
     @GetMapping("/signIn")
     public String signIn(@RequestParam("name") String name,

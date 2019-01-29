@@ -1,4 +1,4 @@
-package com.surveyor.surveyorwebservice.DO;
+package com.surveyor.surveyorwebservice.Bean;
 
 import lombok.Data;
 
@@ -36,6 +36,9 @@ public class User {
     /* 邮箱 */
     @Column(name = "email")
     private String email;
+
+    @Column(name = "order_id")
+    private int orderId;
 
     public User(){
     }

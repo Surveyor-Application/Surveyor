@@ -1,6 +1,6 @@
 package com.surveyor.surveyorwebservice.Service.impl;
 
-import com.surveyor.surveyorwebservice.DO.User;
+import com.surveyor.surveyorwebservice.Bean.User;
 import com.surveyor.surveyorwebservice.Repository.UserRepository;
 import com.surveyor.surveyorwebservice.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findOne(Integer id){return userRepository.findById(id).get();}
+
+    @Override
+    public List<User> findByOrderId(Integer oId){return userRepository.findByOrderId(oId);}
 
     @Override
     public List<User> findAllUser(){return userRepository.findAll();}
