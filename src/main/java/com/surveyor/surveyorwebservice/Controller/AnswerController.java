@@ -33,6 +33,6 @@ public class AnswerController {
     public void SaveAnswer(@RequestParam("answer")String answer,
                            @RequestParam("surid")Integer surid,
                            @RequestParam("queid")Integer queid){
-        answerService.saveAnswer(answer, surid, queid);
+        answerService.saveAnswer(surid, queid, answer);
     }
 }

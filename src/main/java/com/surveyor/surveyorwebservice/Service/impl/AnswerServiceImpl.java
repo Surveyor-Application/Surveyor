@@ -27,7 +27,7 @@ public class AnswerServiceImpl implements AnswerService {
     private AnswerDAO answerDAO;
 
     @Override
-    public void saveAnswer(String answer, Integer surid, Integer queid){
-        answerDAO.saveAnswer(answer, surid, queid);
+    public void saveAnswer(Integer surid, Integer queid, String answer){
+        answerDAO.saveAnswer(surid, queid, answer);
     }
 }

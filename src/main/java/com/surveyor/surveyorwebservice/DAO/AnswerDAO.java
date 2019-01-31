@@ -20,6 +20,6 @@ public interface AnswerDAO {
      * 传过来的参数格式参见第二行的括号中的格式，需要加注解@Param
      *
      **/
-    @Insert("INSERT INTO answer(surid, queid, content) VALUES(#{surid}, #{queid}, #{answer}")
-    void saveAnswer(@Param("answer")String answer, @Param("surid")Integer surid, @Param("queid")Integer queid);
+    @Insert("INSERT INTO answer(surid, queid, content) VALUES(#{surid}, #{queid}, #{answer})")
+    void saveAnswer(@Param("surid")Integer surid, @Param("queid")Integer queid, @Param("answer")String answer);
 }

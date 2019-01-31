@@ -9,5 +9,5 @@ public interface AnswerService {
      * 只有Impl层需要@Service注解
      *
      **/
-    void saveAnswer(String answer, Integer surid, Integer queid);
+    void saveAnswer(Integer surid, Integer queid, String answer);
 }

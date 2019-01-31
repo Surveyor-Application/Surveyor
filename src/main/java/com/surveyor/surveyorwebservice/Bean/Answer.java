@@ -8,6 +8,20 @@ package com.surveyor.surveyorwebservice.Bean;
  **/
 public class Answer {
 
+    /**
+     *
+     * 准备工作！
+     * pom.xml 中加入
+     * <dependency>
+     *     <groupId>org.mybatis.spring.boot</groupId>
+     *     <artifactId>mybatis-spring-boot-starter</artifactId>
+     *     <version>1.3.2</version>
+     * </dependency>
+     * 并重新导入：右键pom.xml → Maven → Reimport
+     * yml中只改你们自己的用户名，其他的配置和我一样就ok
+     *
+     **/
+
     private Integer id;
     /** 该答案属于哪个问卷 */
     private Integer surid;
