@@ -26,7 +26,7 @@ public class AnswerController {
      **/
 
     @Autowired
-    AnswerServiceImpl answerService;
+    private AnswerServiceImpl answerService;
 
     @PostMapping("/insert")
     public void SaveAnswer(@RequestBody Answer answer){
