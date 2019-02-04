@@ -1,10 +1,9 @@
 package com.surveyor.surveyorwebservice.Controller;
 
+import com.surveyor.surveyorwebservice.Bean.Answer;
 import com.surveyor.surveyorwebservice.Service.impl.AnswerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @param: none
@@ -29,10 +28,8 @@ public class AnswerController {
     @Autowired
     AnswerServiceImpl answerService;
 
-    @RequestMapping("/insert")
-    public void SaveAnswer(@RequestParam("answer")String answer,
-                           @RequestParam("surid")Integer surid,
-                           @RequestParam("queid")Integer queid){
-        answerService.saveAnswer(surid, queid, answer);
+    @PostMapping("/insert")
+    public void SaveAnswer(@RequestBody Answer answer){
+        answerService.saveAnswer(answer.getSurid(), answer.getQueid(), answer.getContent());
     }
 }
