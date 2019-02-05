@@ -2,6 +2,7 @@ package com.surveyor.surveyorwebservice.Controller;
 
 import com.surveyor.surveyorwebservice.Bean.Answer;
 import com.surveyor.surveyorwebservice.Service.impl.AnswerServiceImpl;
+import com.surveyor.surveyorwebservice.utils.JSONResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,10 @@ public class AnswerController {
     private AnswerServiceImpl answerService;
 
     @PostMapping("/insert")
-    public void SaveAnswer(@RequestBody Answer answer){
+    public JSONResult SaveAnswer(@RequestBody Answer answer){
+        // System.out.println(answer);
         answerService.saveAnswer(answer.getSurid(), answer.getQueid(), answer.getContent());
+
+        return JSONResult.ok(answer);
     }
 }
