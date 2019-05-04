@@ -10,6 +10,6 @@ import java.util.List;
 @Mapper
 public interface QuestionDAO {
 
-    @Select("SELECT content FROM question WHERE surid = #{surid}")
+    @Select("SELECT sequence, content FROM question WHERE surid = #{surid}")
     List<Question> queryQuestionList(@Param("surid")Integer surid);
 }

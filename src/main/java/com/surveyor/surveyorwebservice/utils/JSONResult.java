@@ -22,13 +22,13 @@ public class JSONResult {
     // 返回相应状态码
     private Integer status;
 
-    //
+    // 返回相应信息
     private String msg;
 
-    //
+    // 返回相应数据
     private Object data;
 
-    //
+    // 不使用
     private String ok;
 
     public static JSONResult build(Integer status, String msg, Object data) {
